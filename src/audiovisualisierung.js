@@ -1,7 +1,6 @@
 /*
  * Audiovisualization using the html canvas element.
- * Please note: this is an offline-only version.
- For this version to be used online you need an
+ * Please note: For this version to be used online you need an
  XMLHttpRequest to load the music file!
  */
 
@@ -32,6 +31,7 @@ let loadedlet = 0, totallet = 0
 const HIGHLIGHT_COLORS = [0x4200ff, 0x00ffff, 0xff0000, 0xff00ff]
 const LOADING_WRAPPER_HEIGHT = 100
 
+//Add sample music files
 const SAMPLE_URLS = ['src/babylon-system.mp3', 'src/sample-2.mp3']
 const SAMPLE_SUBTEXTS = ['You are listening to Truespirit – Babylon System.',
 						 'You are listening to VA – Electrolush The Very Best Of Minimal And Electro Nouveau.']
@@ -464,7 +464,7 @@ function drawBars (array) {
 	pivot.scale.x = RADIUS
 	pivot.scale.y = RADIUS
 	pivot.scale.z = RADIUS
-	//jaw drop at the bass
+	//jaw drops at the bass
 	if ( bass > 175 ) {
 			jaw.position.y = - 18 - (bass * 0.08)
 		} else {
@@ -472,12 +472,12 @@ function drawBars (array) {
 		}
 
 
-	//headphones shake
+	//headphones shake at the bass
   const dy = Math.random()*7
 
 	headphones.position.y = bass >= 155 ? dy : 0
 
-//rotate baclground the most when sare is more than 230
+//rotate background the most when snare is more than 230
 	if (snare > 0) {
 		if (snare > 100) {
 			if (snare > 230) {
